@@ -9,7 +9,8 @@ namespace UnityStandardAssets._2D
     {
         private PlatformerCharacter2D m_Character;
         private bool m_Jump;
-
+        public GameObject bulletPrefab;
+        public Transform bulletSpawn;
 
         private void Awake()
         {
@@ -24,6 +25,11 @@ namespace UnityStandardAssets._2D
                 // Read the jump input in Update so button presses aren't missed.
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Fire();
+            }
         }
 
 
@@ -35,6 +41,23 @@ namespace UnityStandardAssets._2D
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump);
             m_Jump = false;
+        }
+
+        void Fire()
+        {
+            //Creates bullet from prefab
+            var bullet = (GameObject)Instantiate(
+                bulletPrefab,
+                bulletSpawn.position,
+                bulletSpawn.rotation);
+
+            //Add velocity to the bullet
+            if(m_Character.m_FacingRight)
+                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * 20;
+            else
+                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * -20;
+            //Destroy the bullet after 2 second
+            Destroy(bullet, 2.0f);
         }
     }
 }
