@@ -9,8 +9,8 @@ namespace UnityStandardAssets._2D
     {
         private PlatformerCharacter2D m_Character;
         private bool m_Jump;
-        public GameObject bulletPrefab;
-        public Transform bulletSpawn;
+        private bool crouch;
+        float h;
 
         private void Awake()
         {
@@ -18,7 +18,7 @@ namespace UnityStandardAssets._2D
         }
 
 
-        private void Update()
+        private void Update()   //As a general rule, keep player input in Update(), and movement in FixedUpdate
         {
             if (!m_Jump)
             {
@@ -26,38 +26,27 @@ namespace UnityStandardAssets._2D
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
 
-            if (Input.GetMouseButtonDown(0))
+             if (Input.GetMouseButtonDown(0))
             {
-                Fire();
+                m_Character.Fire();
             }
+            // Read the inputs.
+
+            crouch = Input.GetKey(KeyCode.LeftControl);
+
+            h = CrossPlatformInputManager.GetAxis("Horizontal");
         }
 
 
         private void FixedUpdate()
         {
-            // Read the inputs.
-            bool crouch = Input.GetKey(KeyCode.LeftControl);
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
+            
+           
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump);
             m_Jump = false;
         }
 
-        void Fire()
-        {
-            //Creates bullet from prefab
-            var bullet = (GameObject)Instantiate(
-                bulletPrefab,
-                bulletSpawn.position,
-                bulletSpawn.rotation);
-
-            //Add velocity to the bullet
-            if(m_Character.m_FacingRight)
-                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * 20;
-            else
-                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * -20;
-            //Destroy the bullet after 2 second
-            Destroy(bullet, 2.0f);
-        }
+       
     }
 }

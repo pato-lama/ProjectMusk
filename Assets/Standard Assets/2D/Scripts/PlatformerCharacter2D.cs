@@ -19,7 +19,9 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         public bool m_FacingRight = true;  // For determining which way the player is currently facing.
-
+        public bool m_IsShooting = false; // For determinining when the player is shooting.
+        public GameObject bulletPrefab;
+        public Transform bulletSpawn;
         private void Awake()
         {
             // Setting up references.
@@ -46,6 +48,7 @@ namespace UnityStandardAssets._2D
 
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
+            
         }
 
 
@@ -109,6 +112,28 @@ namespace UnityStandardAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+        }
+
+        public void Fire()
+        {
+            m_IsShooting = true;
+            m_Anim.SetBool("Shoot", m_IsShooting);
+            //Creates bullet from prefab
+            var bullet = (GameObject)Instantiate(
+                bulletPrefab,
+                bulletSpawn.position,
+                bulletSpawn.rotation);
+           
+            //Add velocity to the bullet
+            if (m_FacingRight)
+                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * 20;
+            else
+            {
+                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.right * -20;
+                bullet.transform.localRotation = Quaternion.Euler(0, 180, 0);
+            }
+            //Destroy the bullet after 2 second
+            Destroy(bullet, 2.0f);
         }
     }
 }

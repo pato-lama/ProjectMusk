@@ -12,6 +12,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   log:
+  - CommitID: d6ad73a666d071e716bf3a5f5022ae70cfc0ad95
+    MergeA: 
+    MergeB: 
+    AuthorName: Pato
+    AuthorEmail: patricio.lamacchia@gmail.com
+    CommitEmail: patricio.lamacchia@gmail.com
+    CommitName: Pato
+    Summary: Minor Commit
+    Description: "Minor Commit\r\n\r\nJust extra files"
+    TimeString: 10/7/2017 5:18:36 PM -05:00
+    CommitTimeString: 10/7/2017 5:18:36 PM -05:00
+    Changes:
+    - Path: .gitignore
+      FullPath: C:\Users\Pato\Documents\GitHub\ProjectMusk\.gitignore
+      ProjectPath: .gitignore
+      OriginalPath: 
+      Status: 4
+      Staged: 0
+    - Path: .vs\ProjectMusk\v15\.suo
+      FullPath: C:\Users\Pato\Documents\GitHub\ProjectMusk\.vs\ProjectMusk\v15\.suo
+      ProjectPath: .vs\ProjectMusk\v15\.suo
+      OriginalPath: 
+      Status: 3
+      Staged: 0
+    - Path: Assets\scene1.unity
+      FullPath: C:\Users\Pato\Documents\GitHub\ProjectMusk\Assets\scene1.unity
+      ProjectPath: Assets\scene1.unity
+      OriginalPath: 
+      Status: 3
+      Staged: 0
+    - Path: Library\CurrentLayout.dwlt
+      FullPath: C:\Users\Pato\Documents\GitHub\ProjectMusk\Library\CurrentLayout.dwlt
+      ProjectPath: Library\CurrentLayout.dwlt
+      OriginalPath: 
+      Status: 3
+      Staged: 0
+    - Path: Library\EditorInstance.json
+      FullPath: C:\Users\Pato\Documents\GitHub\ProjectMusk\Library\EditorInstance.json
+      ProjectPath: Library\EditorInstance.json
+      OriginalPath: 
+      Status: 3
+      Staged: 0
+    - Path: Library\assetDatabase3
+      FullPath: C:\Users\Pato\Documents\GitHub\ProjectMusk\Library\assetDatabase3
+      ProjectPath: Library\assetDatabase3
+      OriginalPath: 
+      Status: 3
+      Staged: 0
+    - Path: Library\expandedItems
+      FullPath: C:\Users\Pato\Documents\GitHub\ProjectMusk\Library\expandedItems
+      ProjectPath: Library\expandedItems
+      OriginalPath: 
+      Status: 3
+      Staged: 0
+    - Path: Library\gfu\cache\gitlog.yaml
+      FullPath: C:\Users\Pato\Documents\GitHub\ProjectMusk\Library\gfu\cache\gitlog.yaml
+      ProjectPath: Library\gfu\cache\gitlog.yaml
+      OriginalPath: 
+      Status: 3
+      Staged: 0
+    - Path: Library\metadata\05\0542c90a021413c46b3fd1c92221948a
+      FullPath: C:\Users\Pato\Documents\GitHub\ProjectMusk\Library\metadata\05\0542c90a021413c46b3fd1c92221948a
+      ProjectPath: Library\metadata\05\0542c90a021413c46b3fd1c92221948a
+      OriginalPath: 
+      Status: 3
+      Staged: 0
   - CommitID: d6984567d97a07be797b9aee0e2f273542cdcbb3
     MergeA: 
     MergeB: 
