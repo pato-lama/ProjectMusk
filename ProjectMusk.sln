@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMusk", "ProjectMusk.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMusk.Editor.Plugins", "ProjectMusk.Editor.Plugins.csproj", "{DBC39A8D-722F-BE75-87A3-C850973C75DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectMusk.Editor", "ProjectMusk.Editor.csproj", "{04A83385-330B-F360-B8FA-EE0ABD2FB7A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{DBC39A8D-722F-BE75-87A3-C850973C75DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBC39A8D-722F-BE75-87A3-C850973C75DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBC39A8D-722F-BE75-87A3-C850973C75DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04A83385-330B-F360-B8FA-EE0ABD2FB7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04A83385-330B-F360-B8FA-EE0ABD2FB7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04A83385-330B-F360-B8FA-EE0ABD2FB7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04A83385-330B-F360-B8FA-EE0ABD2FB7A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
