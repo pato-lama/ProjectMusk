@@ -8,7 +8,7 @@ public class IdleState : IEnemyState {
 
     private float idleTimer;
 
-    private float idleDuration = 5;
+    private float idleDuration = 10;
 
 	public void Enter(Enemy3 enemy){
 
@@ -18,6 +18,11 @@ public class IdleState : IEnemyState {
     public void Execute(){
 
         Debug.Log("Idling");
+
+        if (enemy.Target != null)
+        {
+            enemy.changeState(new PatrolState());
+        }
         Idle();
               
 }

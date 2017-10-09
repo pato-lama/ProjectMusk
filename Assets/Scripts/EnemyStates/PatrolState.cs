@@ -6,7 +6,7 @@ public class PatrolState : IEnemyState {
 
     private Enemy3 enemy;
     private float patrolTimer;
-    private float patrolDuration = 10;
+    private float patrolDuration = 5;
 
 	public void Enter(Enemy3 enemy){
 
@@ -19,6 +19,11 @@ public class PatrolState : IEnemyState {
         Patrol();
 
         enemy.Move();
+
+        if (enemy.Target != null)
+        {
+            enemy.changeState(new AttackState());
+        }
               
 }
 

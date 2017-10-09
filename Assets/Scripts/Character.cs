@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour {
+public abstract class Character : MonoBehaviour {
 
     public Animator MyAnimator { get; set; }
 
@@ -40,7 +40,7 @@ public abstract class Enemy : MonoBehaviour {
     {
         facingRight = !facingRight;
         transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
-
+        
     }
 
     public virtual void fireBullet(int value)
