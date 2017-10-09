@@ -26,11 +26,27 @@ namespace UnityStandardAssets._2D
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
 
-             if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
+                m_Character.m_Anim.SetBool("Shoot", true);
                 m_Character.Fire();
+         
             }
-            // Read the inputs.
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                m_Character.m_Anim.SetBool("Shoot", false);
+                m_Character.m_Anim.SetBool("RunShoot", false);
+                m_Character.m_Anim.SetBool("JumpShoot", false);
+            }
+
+            if (Input.GetMouseButtonDown(0) && GetComponent<Rigidbody2D>().velocity.x != 0)
+            {
+                m_Character.m_Anim.SetBool("RunShoot", true);
+            }
+
+            if (Input.GetMouseButtonDown(0) && m_Jump)
+                m_Character.m_Anim.SetBool("JumpShoot", true);
 
             crouch = Input.GetKey(KeyCode.LeftControl);
 

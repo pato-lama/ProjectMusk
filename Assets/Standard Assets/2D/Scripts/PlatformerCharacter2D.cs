@@ -16,12 +16,14 @@ namespace UnityStandardAssets._2D
         private bool m_Grounded;            // Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
-        private Animator m_Anim;            // Reference to the player's animator component.
+        public Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         public bool m_FacingRight = true;  // For determining which way the player is currently facing.
-        public bool m_IsShooting = false; // For determinining when the player is shooting.
+      //  public bool m_IsShooting = false; // For determinining when the player is shooting.
         public GameObject bulletPrefab;
         public Transform bulletSpawn;
+        public AudioClip shootSound;
+
         private void Awake()
         {
             // Setting up references.
@@ -35,7 +37,7 @@ namespace UnityStandardAssets._2D
         private void FixedUpdate()
         {
             m_Grounded = false;
-            m_IsShooting = false;
+          //  m_IsShooting = false;
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
             // This can be done using layers instead but Sample Assets will not overwrite your project settings.
             Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
@@ -45,7 +47,7 @@ namespace UnityStandardAssets._2D
                     m_Grounded = true;
             }
             m_Anim.SetBool("Ground", m_Grounded);
-            m_Anim.SetBool("Shoot", m_IsShooting);
+          //  m_Anim.SetBool("Shoot", m_IsShooting);
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
             
@@ -116,8 +118,7 @@ namespace UnityStandardAssets._2D
 
         public void Fire()
         {
-            m_IsShooting = true;
-            m_Anim.SetBool("Shoot", m_IsShooting);
+          //  m_IsShooting = true;
             //Creates bullet from prefab
             var bullet = (GameObject)Instantiate(
                 bulletPrefab,
