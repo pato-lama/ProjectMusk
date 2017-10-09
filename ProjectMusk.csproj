@@ -168,10 +168,10 @@
     <Compile Include="Assets\AstarPathfindingProject\Utilities\PathUtilities.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Utilities\ProfileHelper.cs" />
     <Compile Include="Assets\AstarPathfindingProject\Utilities\UnityReferenceHelper.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\EnemyAI1.cs" />
-    <Compile Include="Assets\Scripts\EnemyAIOne.cs" />
-    <Compile Include="Assets\Scripts\Health.cs" />
+    <Compile Include="Assets\Bullet.cs" />
+    <Compile Include="Assets\EnemyAI1.cs" />
+    <Compile Include="Assets\EnemyAIOne.cs" />
+    <Compile Include="Assets\Health.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh.shader" />
