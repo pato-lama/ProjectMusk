@@ -4,40 +4,43 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Health : MonoBehaviour {
-    public const int maxHealth = 100;
-    public int currentHealth = maxHealth;
-    public bool destroyOnDeath;
-    public RectTransform healthBar;
+   public class Health : MonoBehaviour {
+        public const int maxHealth = 100;
+        public int currentHealth = maxHealth;
+        public bool destroyOnDeath;
+        public RectTransform healthBar;
 
-    public void takeDamage(int amount)
-    {
-        currentHealth -= amount;
-       
-        if (currentHealth <= 0)
+
+
+        public void takeDamage(int amount)
         {
-            if (destroyOnDeath)
-                Destroy(gameObject);
-            else
+            currentHealth -= amount;
+
+            if (currentHealth <= 0)
             {
-                currentHealth = maxHealth;
-                RpcRespawn();
+                if (destroyOnDeath)
+                    Destroy(gameObject);
+                else
+                {
+                    currentHealth = maxHealth;
+                    RpcRespawn();
+                }
+
             }
-        }
-        if (!destroyOnDeath)
+
             onChangeHealth(currentHealth);
-    }
+        }
 
-    void onChangeHealth (int currentHealth)
-    {
-        healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
-    }
+        void onChangeHealth(int currentHealth)
+        {
+            healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
+        }
 
-    void RpcRespawn()
-    {
+        void RpcRespawn()
+        {
             // move back to zero location
-        transform.position = Vector3.zero;
-        
+            transform.position = Vector3.zero;
+
+        }
     }
-}
 

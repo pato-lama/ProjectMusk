@@ -22,7 +22,9 @@ namespace UnityStandardAssets._2D
       //  public bool m_IsShooting = false; // For determinining when the player is shooting.
         public GameObject bulletPrefab;
         public Transform bulletSpawn;
+        
         public AudioClip shootSound;
+
 
         private void Awake()
         {
@@ -31,6 +33,7 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+            
         }
 
 

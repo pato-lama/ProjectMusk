@@ -20,6 +20,7 @@ namespace UnityStandardAssets._2D
 
         private void Update()   //As a general rule, keep player input in Update(), and movement in FixedUpdate
         {
+            
             if (!m_Jump)
             {
                 // Read the jump input in Update so button presses aren't missed.
