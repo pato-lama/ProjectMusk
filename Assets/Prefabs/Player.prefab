@@ -30,8 +30,8 @@ GameObject:
   - component: {fileID: 11400002}
   - component: {fileID: 11400000}
   - component: {fileID: 6100000}
-  - component: {fileID: 114141277172182102}
   - component: {fileID: 114081356570043894}
+  - component: {fileID: 114111920351848610}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -73,7 +73,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.97, y: 0.02, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
---- !u!114 &114141277172182102
+--- !u!114 &114111920351848610
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987f05bce5b838a498f4f33cd071607f, type: 3}
+  m_Script: {fileID: 11500000, guid: 26d4299d4d320654484fcc684e28fa04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
