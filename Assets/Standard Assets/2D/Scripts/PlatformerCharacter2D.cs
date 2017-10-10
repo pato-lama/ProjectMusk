@@ -22,7 +22,7 @@ namespace UnityStandardAssets._2D
       //  public bool m_IsShooting = false; // For determinining when the player is shooting.
         public GameObject bulletPrefab;
         public Transform bulletSpawn;
-        
+
         public AudioClip shootSound;
 
 
@@ -36,6 +36,14 @@ namespace UnityStandardAssets._2D
             
         }
 
+        private void Update()
+        {
+          if (Input.GetMouseButtonDown(0))
+            {
+                SoundManager.instance.PlaySingle(shootSound);
+            }
+            
+        }
 
         private void FixedUpdate()
         {
@@ -121,12 +129,14 @@ namespace UnityStandardAssets._2D
 
         public void Fire()
         {
-          //  m_IsShooting = true;
+            
+            //  m_IsShooting = true;
             //Creates bullet from prefab
             var bullet = (GameObject)Instantiate(
                 bulletPrefab,
                 bulletSpawn.position,
                 bulletSpawn.rotation);
+
            
             //Add velocity to the bullet
             if (m_FacingRight)

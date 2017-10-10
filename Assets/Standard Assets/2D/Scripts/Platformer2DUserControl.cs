@@ -29,6 +29,7 @@ namespace UnityStandardAssets._2D
 
             if (Input.GetMouseButtonDown(0))
             {
+
                 m_Character.m_Anim.SetBool("Shoot", true);
                 m_Character.Fire();
          

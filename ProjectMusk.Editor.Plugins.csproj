@@ -115,6 +115,9 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
     <Reference Include="AsyncBridge.Net35">
       <HintPath>Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll</HintPath>
     </Reference>
@@ -154,18 +157,15 @@
     <Reference Include="System.Threading">
       <HintPath>Assets\Plugins\GitHub\Editor\System.Threading.dll</HintPath>
     </Reference>
-    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="ProjectMusk.Plugins.csproj">
-      <Project>{A6C3C23D-4153-3D6C-CBE0-F35385D687B5}</Project>
-      <Name>ProjectMusk.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="ProjectMusk.csproj">
       <Project>{D85E06BE-B842-16D1-447E-FCBC76094777}</Project>
       <Name>ProjectMusk</Name>
+    </ProjectReference>
+    <ProjectReference Include="ProjectMusk.Plugins.csproj">
+      <Project>{A6C3C23D-4153-3D6C-CBE0-F35385D687B5}</Project>
+      <Name>ProjectMusk.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +186,7 @@
     <None Include="Assets\Plugins\GitHub\Editor\CREDITS.txt" />
     <None Include="Assets\Plugins\GitHub\Editor\EULA.txt" />
     <None Include="Assets\Scifi Art Demo Pack\Demo Readme.txt" />
+    <None Include="Assets\Sounds\retroSoundEffects\INFO.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

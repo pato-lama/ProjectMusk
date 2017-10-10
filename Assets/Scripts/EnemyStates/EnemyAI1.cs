@@ -117,7 +117,7 @@ public class EnemyAI1 : MonoBehaviour
     {
         var hit = collision.gameObject;
         var health = hit.GetComponent<Health>();
-        if (health != null)
+        if (health != null && collision.gameObject.tag != "Enemy")
             health.takeDamage(10);
     }
 }
